@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="icon" href="images/team-3.jpg">
+	<title>Estimated Disaster Loss Prediction Portal</title>
+	<!-- add bootstrap css file -->
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+	<!--CSS for the login and Sign Up page-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		/* Full-width input fields */
+		input[type=text],
+		input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+
+		/* Set a style for all buttons */
+		button {
+			background-color: rgb(45, 51, 71);
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		button:hover {
+			opacity: 0.8;
+		}
+
+		/* Extra styles for the cancel button */
+		.cancelbtn {
+			width: auto;
+			padding: 10px 18px;
+			background-color: #f44336;
+		}
+
+		/* Center the image and position the close button */
+		.imgcontainer {
+			text-align: center;
+			margin: 24px 0 12px 0;
+			position: relative;
+		}
+
+		img.avatar {
+			width: 40%;
+			border-radius: 50%;
+		}
+
+		.container {
+			padding: 16px;
+		}
+
+		span.psw {
+			float: right;
+			padding-top: 16px;
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			left: 0;
+			top: 0;
+			width: 100%;
+			/* Full width */
+			height: 100%;
+			/* Full height */
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.4);
+			/* Black w/ opacity */
+			padding-top: 60px;
+		}
+
+		/* Modal Content/Box */
+		.modal-content {
+			background-color: #fefefe;
+			margin: 5% auto 15% auto;
+			/* 5% from the top, 15% from the bottom and centered */
+			border: 1px solid #888;
+			width: 50%;
+			/* Could be more or less, depending on screen size */
+		}
+
+		/* The Close Button (x) */
+		.close {
+			position: absolute;
+			right: 25px;
+			top: 0;
+			color: #000;
+			font-size: 35px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: red;
+			cursor: pointer;
+		}
+
+		/* Add Zoom Animation */
+		.animate {
+			-webkit-animation: animatezoom 0.6s;
+			animation: animatezoom 0.6s
+		}
+
+		@-webkit-keyframes animatezoom {
+			from {
+				-webkit-transform: scale(0)
+			}
+
+			to {
+				-webkit-transform: scale(1)
+			}
+		}
+
+		@keyframes animatezoom {
+			from {
+				transform: scale(0)
+			}
+
+			to {
+				transform: scale(1)
+			}
+		}
+
+		/* Change styles for span and cancel button on extra small screens */
+		@media screen and (max-width: 300px) {
+			span.psw {
+				display: block;
+				float: none;
+			}
+
+			.cancelbtn {
+				width: 100%;
+			}
+		}
+	</style>
+	<!--Ending of CSS of Login page-->
+</head>
+
+<body>
+	<!-- navbar -->
+
+	<nav class="navbar navbar-expand-lg fixed-top ">
+		<a class="navbar-brand" href="#">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+			<ul class="navbar-nav mr-4">
+
+				<li class="nav-item">
+					<a class="nav-link" data-value="about" href="#">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " data-value="portfolio" href="#">Methodology</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " data-value="team" href="#">
+						Team</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " data-value="contact" href="#">Contact</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+	<!-- header -->
+	<header class="header ",align="right">
+			<div class="description", style="width:100%">
+					<table align="right">
+						<tr><th>Disaster</th></tr>
+					  <tr>
+						  <th>Prediction Model</th>
+					  </tr>
+					  <tr>
+						<th><form action="/action_page.php">
+						<select name="Select Your State">
+						  <option value="">Select Location</option>
+						  <option value="Province2">Province-1</option>
+						  <option value="Province2">Province-2</option>
+						  <option value="Province3">Province-3</option>
+						  <option value="Gandaki">Gandaki</option>
+						  <option value="Province5">Province-5</option>
+						  <option value="Karnali">Karnali</option>
+						  <option value="Sudurpaschim">Sudurpaschim</option>
+						</select>
+					  </form> </th> </tr>
+					  <tr><th><form action="/action_page.php">
+						<select name="Disaster">
+						  <option value="">Select Disaster</option>
+						  <option value="fire">Fire</option>
+						  <option value="flood">Flood</option>
+						  <option value="landslide">Landslide</option>
+						  <option value="thunderbolt">Thunderbolt</option>
+						  <option value="earthquake">Earthquake</option>
+						</select>
+					  </form> </th> </tr>
+						<tr><th><button class="button">Visualize</button></th>
+						</tr>
+					  </table>
+				</div>
+	</header>
+
+	<!-- about section -->
+	<div class="about" id="about">
+		<div class="container">
+			<h1 class="text-center">About Estimated Disaster Loss Prediction Portal</h1>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<img src="images/team-3.jpg" class="img-fluid">
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12 desc">
+					<p>
+						The portal shows the predicted economic loss data of disasters from the year 2011 till present. The data is sourced from BIPAD (Building Information Platform Against Disaster), a government-led integrated disaster information management system (DIMS). The estimated loss data has been predicted using OSL (Ordinary Least Square) Regression model. 
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Research portfolio -->
+	<div class="portfolio" id="portfolio">
+		<h1 class="text-center">Methodology</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<h4 class="text-center">Engineering</h4>
+					<img src="images/portfolio/port13.png" class="img-fluid">
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<h4 class="text-center">Communication</h4>
+					<img src="images/portfolio/port1.png" class="img-fluid">
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<h4 class="text-center">Space Technology</h4>
+					<img src="images/portfolio/port6.png" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Team section -->
+	<div class="team" id="team">
+		<div class="container">
+			<h1 class="text-center">Our Team</h1>
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/team-2.jpg" class="img-fluid" alt="team">
+					<div class="des">
+						Gunjan Ghimire
+					</div>
+					<span class="text-muted">Founder</span>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/team-3.jpg" class="img-fluid" alt="team">
+					<div class="des">
+						Huckster
+					</div>
+					<span class="text-muted">Co-Founder</span>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/team-2.jpg" class="img-fluid" alt="team">
+					<div class="des">
+						Ms. Jane Nobody
+					</div>
+					<span class="text-muted">Researcher</span>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/team-3.jpg" class="img-fluid" alt="team">
+					<div class="des">
+						Mr. Jone Done
+					</div>
+					<span class="text-muted">Developer</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact form -->
+	<div class="contact-form" id="contact">
+		<div class="container">
+			<form>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12">
+						<h1>Get in Touch</h1>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-12 right">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com"
+								name="email">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control form-control-lg">
+
+				   	 </textarea>
+						</div>
+						<input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- add Javasscript file from js file -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src='js/main.js'></script>
+
+	<style>
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			background-color: rgb(45, 51, 71);
+			color: white;
+			text-align: center;
+		}
+	</style>
+
+	<div class="footer">
+		</br>
+		© 2019 Disclaimer:
+		<a href="index.html"> The prediction modelling is done using self reported data sources, please use caution using the data.</a>
+		<!-- Copyright -->
+	</div>
+</body>
+
+</html>

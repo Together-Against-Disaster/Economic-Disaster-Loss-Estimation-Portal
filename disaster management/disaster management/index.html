@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="icon" href="images/logo.png">
+	<title>Economic Disaster Loss Estimation Portal</title>
+	<!-- add bootstrap css file -->
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+	<!--CSS for the login and Sign Up page-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		/* Full-width input fields */
+		input[type=text],
+		input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+
+		pre {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		/* Set a style for all buttons */
+		.button {
+			background-color: rgb(45, 51, 71);
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			size: 5px 5px;
+		}
+
+		button:hover {
+			opacity: 0.8;
+		}
+
+		/* Extra styles for the cancel button */
+		.cancelbtn {
+			width: auto;
+			padding: 10px 18px;
+			background-color: #f44336;
+		}
+
+		/* Center the image and position the close button */
+		.imgcontainer {
+			text-align: center;
+			margin: 24px 0 12px 0;
+			position: relative;
+		}
+
+		img.avatar {
+			width: 40%;
+			border-radius: 50%;
+		}
+
+		.container {
+			padding: 16px;
+		}
+
+		span.psw {
+			float: right;
+			padding-top: 16px;
+		}
+
+		/* The Modal (background) */
+		.modal {
+			display: none;
+			/* Hidden by default */
+			position: fixed;
+			/* Stay in place */
+			z-index: 1;
+			/* Sit on top */
+			left: 0;
+			top: 0;
+			width: 100%;
+			/* Full width */
+			height: 100%;
+			/* Full height */
+			overflow: auto;
+			/* Enable scroll if needed */
+			background-color: rgb(0, 0, 0);
+			/* Fallback color */
+			background-color: rgba(0, 0, 0, 0.4);
+			/* Black w/ opacity */
+			padding-top: 60px;
+		}
+
+		/* Modal Content/Box */
+		.modal-content {
+			background-color: #fefefe;
+			margin: 5% auto 15% auto;
+			/* 5% from the top, 15% from the bottom and centered */
+			border: 1px solid #888;
+			width: 50%;
+			/* Could be more or less, depending on screen size */
+		}
+
+		/* The Close Button (x) */
+		.close {
+			position: absolute;
+			right: 25px;
+			top: 0;
+			color: #000;
+			font-size: 35px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: red;
+			cursor: pointer;
+		}
+
+		/* Add Zoom Animation */
+		.animate {
+			-webkit-animation: animatezoom 0.6s;
+			animation: animatezoom 0.6s
+		}
+
+		@-webkit-keyframes animatezoom {
+			from {
+				-webkit-transform: scale(0)
+			}
+
+			to {
+				-webkit-transform: scale(1)
+			}
+		}
+
+		@keyframes animatezoom {
+			from {
+				transform: scale(0)
+			}
+
+			to {
+				transform: scale(1)
+			}
+		}
+
+		/* Change styles for span and cancel button on extra small screens */
+		@media screen and (max-width: 300px) {
+			span.psw {
+				display: block;
+				float: none;
+			}
+
+			.cancelbtn {
+				width: 100%;
+			}
+		}
+	</style>
+	<!--Ending of CSS of Login page-->
+</head>
+
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-lg fixed-top ">
+		<a class="navbar-brand" href="#">Economic Disaster Loss Estimation Portal</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+			<ul class="navbar-nav mr-4">
+
+				<li class="nav-item">
+					<a class="nav-link" data-value="about" href="#">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " data-value="portfolio" href="#">Methodology</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " data-value="team" href="#">
+						Team</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " data-value="contact" href="#">Contact</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+	<!-- header -->
+	<header class="header " ,align="right">
+		<div class="description" , style="width:100%">
+			<table align="right">
+				<tr>
+					<th>Loss</th>
+				</tr>
+				<tr>
+					<th>Estimation Parameter</th>
+				</tr>
+				<tr>
+					<th>
+						<form action="/action_page.php">
+							<select name="Select Your State" required id="province_no">
+								<option value="">Select Province</option>
+								<option value="Province1">Province-1</option>
+								<option value="Province2">Province-2</option>
+								<option value="Province3">Province-3</option>
+								<option value="Gandaki">Gandaki</option>
+								<option value="Province5">Province-5</option>
+								<option value="Karnali">Karnali</option>
+								<option value="Sudurpaschim">Sudurpaschim</option>
+							</select>
+						</form>
+					</th>
+				</tr>
+				<tr>
+					<th><button id="myBtn" class="button">Predict</button></th>
+					<!-- The Modal -->
+					<div id="myModal" class="modal" data-backdrop="static" data-keyboard="false">
+
+						<!-- Modal content -->
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<img src="images/eel.png" class="img-fluid">
+							<input type="button" class="button" value="Download"
+								onClick="window.location.href='Opendatafileofdisasterparameters.xlsx'">
+						</div>
+					</div>
+					<script>
+						// Get the modal
+						var modal = document.getElementById("myModal");
+
+						// Get the button that opens the modal
+						var btn = document.getElementById("myBtn");
+
+						// Get the <span> element that closes the modal
+						var span = document.getElementsByClassName("close")[0];
+
+						// When the user clicks the button, open the modal 
+						btn.onclick = function () {
+							var province_no = document.getElementById('province_no');
+							if (province_no.value == '') {
+								alert("Please Select province no.");
+								return false;
+								modal.style.display = 'none';
+							}
+							modal.style.display = "block";
+						}
+
+						// When the user clicks on <span> (x), close the modal
+						span.onclick = function () {
+							modal.style.display = "none";
+						}
+
+						// When the user clicks anywhere outside of the modal, close it
+						window.onclick = function (event) {
+							if (event.target == modal) {
+								modal.style.display = "block";
+							}
+						}
+					</script>
+				</tr>
+			</table>
+		</div>
+	</header>
+
+	<!-- about section -->
+	<div class="about" id="about">
+		<div class="container">
+			<h1 class="text-center">About Estimated Disaster Loss Prediction Portal</h1>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12">
+					<img src="images/logo.png" class="img-fluid">
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12 desc">
+					<p>
+						The portal provides the estimated economic loss data based on the past disasters from 2011 till
+						present. The data is sourced from BIPAD (Building Information Platform Against Disaster), a
+						government-led integrated Disaster Information Management System (DIMS).
+						The estimated loss data generated aims to help the decision makers to identify high priority
+						areas for effective preparedness and mitigation planning and decision making. The output will
+						also help the decision makers to plan for effective budget allocation. The data has been
+						estimated using OSL (Ordinary Least Square) method.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Research portfolio -->
+	<div class="portfolio" id="portfolio">
+		<h1 class="text-center">Methodology</h1>
+		<div class="container",align="center">
+		<pre>
+					The estimated model has been generated using the OSL Regression Model (Ordinary Least Square).
+					Ordinary least squares (OLS) regression is a statistical method of analysis that estimates the 
+					relationship between multiple independent variables and a dependent variable;
+					the method estimates the relationship by minimizing the sum of the squares in the 
+					difference between the observed and predicted values of the dependent variable configured as a straight line.
+					The total loss has been taken as the dependent variable and different 
+					hazards that caused the economic loss has been taken as the independent variable.
+					Particularly, the independent variables used are the province, belt, 
+					and hazards (animal terror, drowning, epidemic, fire, flood, hailstorm, 
+					heavy rainfall, high altitude, landslide, thunderbolt and other natural hazards.
+
+					The OLS regression analysis used is 
+					Y= a + b1x1 + b2x2 + ……………. + bnxn
+					
+					Y= Total Estimated Economic Loss
+					x1 = Province fixed effect
+					x2 = Belt fixed effect
+					x3 = Animal terror
+					x4= Drowning
+					x5= Epidemic
+					x6=Fire
+					x7= Flood
+					x8= Hailstorm
+					x9= Heavy rainfall
+					x10= High Altitude	 
+					x11= Landslide
+					x12= Thunderbolt
+					x13= Other natural hazards
+					
+					The findings are
+					
+					Fire was the most frequent hazards
+					Total economic loss was most affected by hailstorm
+					Most of the hazards was concentrated within some specific location (data error maybe)
+					We estimate Morang to have the largest economic loss by hazards at log10(8.4872)					
+			</pre>
+		</div>
+	</div>
+
+	<!-- Team section -->
+	<div class="team" id="team">
+		<div class="container">
+			<h1 class="text-center">Our Team</h1>
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/logo.png" class="img-fluid" alt="team">
+					<div class="des">
+						Gunjan Ghimire
+					</div>
+					<span class="text-muted">Founder</span>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/logo.png" class="img-fluid" alt="team">
+					<div class="des">
+						Huckster
+					</div>
+					<span class="text-muted">Co-Founder</span>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/logo.png" class="img-fluid" alt="team">
+					<div class="des">
+						Ms. Jane Nobody
+					</div>
+					<span class="text-muted">Researcher</span>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12 item">
+					<img src="images/logo.png" class="img-fluid" alt="team">
+					<div class="des">
+						Mr. Jone Done
+					</div>
+					<span class="text-muted">Developer</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact form -->
+	<div class="contact-form" id="contact">
+		<div class="container">
+			<form>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12">
+						<h1>Get in Touch</h1>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-12 right">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com"
+								name="email">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control form-control-lg">
+
+				   	 </textarea>
+						</div>
+						<input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- add Javasscript file from js file -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src='js/main.js'></script>
+
+	<style>
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			background-color: rgb(45, 51, 71);
+			color: white;
+			text-align: center;
+		}
+	</style>
+
+	<div class="footer">
+		</br>
+		© 2019 Disclaimer:
+		<a href="index.html"> The prediction modelling is done using self reported data sources, please use caution
+			using the data.</a>
+		<!-- Copyright -->
+	</div>
+</body>
+
+</html>
