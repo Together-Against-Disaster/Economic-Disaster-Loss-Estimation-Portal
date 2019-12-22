@@ -1,11 +1,9 @@
 # solveathon2019_disastergithub
 Github Repository for the Disaster Vulnerability Mapping at Local Level
-![Our logo](https://github.com/gunjanghimire/solveathon2019_disastergithub/blob/master/disaster%20management/images/logo.png)
+![Our logo](https://github.com/Together-Against-Disaster/Economic-Disaster-Loss-Estimation-Portal/blob/master/disaster%20management/images/logo.png)
 
 # Problem Statement
-Vulnerability indicators are constraining the ability of the local entities to allocate budget.
-There is a need of vulnerability mapping at the local level to enable the local actors. A tool
-to provide this service is needed.
+Most of the planning and decision making for Disaster Risk Reduction and Management is still being done on an ad hoc basis. Lack of proper identification, impact, and analysis of past data has been a huge setback for effective planning and evidence based decision making.
 
 ## About
 The portal provides the estimated economic loss data based on the past disasters from 2011 till present. The data is sourced from BIPAD (Building Information Platform Against Disaster), a government-led integrated Disaster Information Management System (DIMS). 
@@ -45,6 +43,21 @@ We estimate Morang to have the largest economic loss by hazards at log10(8.4872)
 The estimate generated are solely based on the total estimated loss and the indicators used is hazards. Due to unavailability of time and data, other indicators have not been used. 
 
 The R2 error (goodness of fit) for the estimated model is 0.5273.
+
+### Team Members
+Aashna Karmacharya
+Alabhya Dahal
+Ankita Shah
+Ankur Shrestha
+Ayasha Khadgi
+Gunjan Ghimire
+Laxman Koirala
+Mohatav Ansari
+Reena Bajracharya
+Sandhya Nepal
+Selina Nakarmi
+Sudhir Bhattarai
+
 
 
 
