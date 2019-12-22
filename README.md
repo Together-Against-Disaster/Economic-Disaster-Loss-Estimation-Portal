@@ -45,19 +45,18 @@ The estimate generated are solely based on the total estimated loss and the indi
 The R2 error (goodness of fit) for the estimated model is 0.5273.
 
 ### Team Members
-
-#### Aashna Karmacharya
-#### Alabhya Dahal
-#### Ankita Shah
-#### Ankur Shrestha
-#### Ayasha Khadgi
-#### Gunjan Ghimire
-#### Laxman Koirala
-#### Mohatav Ansari
-#### Reena Bajracharya
-#### Sandhya Nepal
-#### Selina Nakarmi
-#### Sudhir Bhattarai
+Aashna Karmacharya  
+Alabhya Dahal  
+Ankita Shah  
+Ankur Shrestha  
+Ayasha Khadgi  
+Gunjan Ghimire  
+Laxman Koirala  
+Mohatav Ansari  
+Reena Bajracharya  
+Sandhya Nepal  
+Selina Nakarmi  
+Sudhir Bhattarai  
 
 
 
